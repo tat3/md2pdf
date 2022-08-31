@@ -1,4 +1,6 @@
-# Markdown PDF
+# Markdown PDF 2
+
+This repository and extension were forked from [yzane/vscode-markdown-pdf](https://github.com/yzane/vscode-markdown-pdf).
 
 This extension converts Markdown files to pdf, html, png or jpeg files.
 
