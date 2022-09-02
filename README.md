@@ -1,4 +1,6 @@
-# Markdown PDF
+# Markdown PDF 2
+
+This repository and extension were forked from [yzane/vscode-markdown-pdf](https://github.com/yzane/vscode-markdown-pdf).
 
 This extension converts Markdown files to pdf, html, png or jpeg files.
 
@@ -127,7 +129,7 @@ During downloading, the message `Installing Chromium` is displayed in the status
 
 If you are behind a proxy, set the `http.proxy` option to settings.json and restart Visual Studio Code.
 
-If the download is not successful or you want to avoid downloading every time you upgrade Markdown PDF, please specify the installed [Chrome](https://www.google.co.jp/chrome/) or 'Chromium' with [markdown-pdf.executablePath](#markdown-pdfexecutablepath) option.
+If the download is not successful or you want to avoid downloading every time you upgrade Markdown PDF, please specify the installed [Chrome](https://www.google.co.jp/chrome/) or 'Chromium' with [markdown-pdf-2.executablePath](#markdown-pdf-2executablepath) option.
 
 <div class="page"/>
 
@@ -138,12 +140,12 @@ If the download is not successful or you want to avoid downloading every time yo
 1. Open the Markdown file
 1. Press `F1` or `Ctrl+Shift+P`
 1. Type `export` and select below
-   * `markdown-pdf: Export (settings.json)`
-   * `markdown-pdf: Export (pdf)`
-   * `markdown-pdf: Export (html)`
-   * `markdown-pdf: Export (png)`
-   * `markdown-pdf: Export (jpeg)`
-   * `markdown-pdf: Export (all: pdf, html, png, jpeg)`
+   * `markdown-pdf-2: Export (settings.json)`
+   * `markdown-pdf-2: Export (pdf)`
+   * `markdown-pdf-2: Export (html)`
+   * `markdown-pdf-2: Export (png)`
+   * `markdown-pdf-2: Export (jpeg)`
+   * `markdown-pdf-2: Export (all: pdf, html, png, jpeg)`
 
 ![usage1](images/usage1.gif)
 
@@ -151,18 +153,18 @@ If the download is not successful or you want to avoid downloading every time yo
 
 1. Open the Markdown file
 1. Right click and select below
-   * `markdown-pdf: Export (settings.json)`
-   * `markdown-pdf: Export (pdf)`
-   * `markdown-pdf: Export (html)`
-   * `markdown-pdf: Export (png)`
-   * `markdown-pdf: Export (jpeg)`
-   * `markdown-pdf: Export (all: pdf, html, png, jpeg)`
+   * `markdown-pdf-2: Export (settings.json)`
+   * `markdown-pdf-2: Export (pdf)`
+   * `markdown-pdf-2: Export (html)`
+   * `markdown-pdf-2: Export (png)`
+   * `markdown-pdf-2: Export (jpeg)`
+   * `markdown-pdf-2: Export (all: pdf, html, png, jpeg)`
 
 ![usage2](images/usage2.gif)
 
 ### Auto convert
 
-1. Add `"markdown-pdf.convertOnSave": true` option to **settings.json**
+1. Add `"markdown-pdf-2.convertOnSave": true` option to **settings.json**
 1. Restart Visual Studio Code
 1. Open the Markdown file
 1. Auto convert on save
@@ -172,8 +174,8 @@ If the download is not successful or you want to avoid downloading every time yo
 [Visual Studio Code User and Workspace Settings](https://code.visualstudio.com/docs/customization/userandworkspace)
 
 1. Select **File > Preferences > UserSettings or Workspace Settings**
-1. Find markdown-pdf settings in the **Default Settings**
-1. Copy `markdown-pdf.*` settings
+1. Find markdown-pdf-2 settings in the **Default Settings**
+1. Copy `markdown-pdf-2.*` settings
 1. Paste to the **settings.json**, and change the value
 
 ![demo](images/settings.gif)
@@ -184,54 +186,54 @@ If the download is not successful or you want to avoid downloading every time yo
 
 |Category|Option name|[Configuration scope](https://code.visualstudio.com/api/references/contribution-points#Configuration-property-schema)|
 |:---|:---|:---|
-|[Save options](#save-options)|[markdown-pdf.type](#markdown-pdftype)| |
-||[markdown-pdf.convertOnSave](#markdown-pdfconvertonsave)| |
-||[markdown-pdf.convertOnSaveExclude](#markdown-pdfconvertonsaveexclude)| |
-||[markdown-pdf.outputDirectory](#markdown-pdfoutputdirectory)| |
-||[markdown-pdf.outputDirectoryRelativePathFile](#markdown-pdfoutputdirectoryrelativepathfile)| |
-|[Styles options](#styles-options)|[markdown-pdf.styles](#markdown-pdfstyles)| |
-||[markdown-pdf.stylesRelativePathFile](#markdown-pdfstylesrelativepathfile)| |
-||[markdown-pdf.includeDefaultStyles](#markdown-pdfincludedefaultstyles)| |
-|[Syntax highlight options](#syntax-highlight-options)|[markdown-pdf.highlight](#markdown-pdfhighlight)| |
-||[markdown-pdf.highlightStyle](#markdown-pdfhighlightstyle)| |
-|[Markdown options](#markdown-options)|[markdown-pdf.breaks](#markdown-pdfbreaks)| |
-|[Emoji options](#emoji-options)|[markdown-pdf.emoji](#markdown-pdfemoji)| |
-|[Configuration options](#configuration-options)|[markdown-pdf.executablePath](#markdown-pdfexecutablepath)| |
-|[Common Options](#common-options)|[markdown-pdf.scale](#markdown-pdfscale)| |
-|[PDF options](#pdf-options)|[markdown-pdf.displayHeaderFooter](#markdown-pdfdisplayheaderfooter)|resource|
-||[markdown-pdf.headerTemplate](#markdown-pdfheadertemplate)|resource|
-||[markdown-pdf.footerTemplate](#markdown-pdffootertemplate)|resource|
-||[markdown-pdf.printBackground](#markdown-pdfprintbackground)|resource|
-||[markdown-pdf.orientation](#markdown-pdforientation)|resource|
-||[markdown-pdf.pageRanges](#markdown-pdfpageranges)|resource|
-||[markdown-pdf.format](#markdown-pdfformat)|resource|
-||[markdown-pdf.width](#markdown-pdfwidth)|resource|
-||[markdown-pdf.height](#markdown-pdfheight)|resource|
-||[markdown-pdf.margin.top](#markdown-pdfmargintop)|resource|
-||[markdown-pdf.margin.bottom](#markdown-pdfmarginbottom)|resource|
-||[markdown-pdf.margin.right](#markdown-pdfmarginright)|resource|
-||[markdown-pdf.margin.left](#markdown-pdfmarginleft)|resource|
-|[PNG JPEG options](#png-jpeg-options)|[markdown-pdf.quality](#markdown-pdfquality)| |
-||[markdown-pdf.clip.x](#markdown-pdfclipx)| |
-||[markdown-pdf.clip.y](#markdown-pdfclipy)| |
-||[markdown-pdf.clip.width](#markdown-pdfclipwidth)| |
-||[markdown-pdf.clip.height](#markdown-pdfclipheight)| |
-||[markdown-pdf.omitBackground](#markdown-pdfomitbackground)| |
-|[PlantUML options](#plantuml-options)|[markdown-pdf.plantumlOpenMarker](#markdown-pdfplantumlopenmarker)| |
-||[markdown-pdf.plantumlCloseMarker](#markdown-pdfplantumlclosemarker)| |
-||[markdown-pdf.plantumlServer](#markdown-pdfplantumlserver)| |
-|[markdown-it-include options](#markdown-it-include-options)|[markdown-pdf.markdown-it-include.enable](#markdown-pdfmarkdown-it-includeenable)| |
-|[mermaid options](#mermaid-options)|[markdown-pdf.mermaidServer](#markdown-pdfmermaidserver)| |
+|[Save options](#save-options)|[markdown-pdf-2.type](#markdown-pdf-2type)| |
+||[markdown-pdf-2.convertOnSave](#markdown-pdf-2convertonsave)| |
+||[markdown-pdf-2.convertOnSaveExclude](#markdown-pdf-2convertonsaveexclude)| |
+||[markdown-pdf-2.outputDirectory](#markdown-pdf-2outputdirectory)| |
+||[markdown-pdf-2.outputDirectoryRelativePathFile](#markdown-pdf-2outputdirectoryrelativepathfile)| |
+|[Styles options](#styles-options)|[markdown-pdf-2.styles](#markdown-pdf-2styles)| |
+||[markdown-pdf-2.stylesRelativePathFile](#markdown-pdf-2stylesrelativepathfile)| |
+||[markdown-pdf-2.includeDefaultStyles](#markdown-pdf-2includedefaultstyles)| |
+|[Syntax highlight options](#syntax-highlight-options)|[markdown-pdf-2.highlight](#markdown-pdf-2highlight)| |
+||[markdown-pdf-2.highlightStyle](#markdown-pdf-2highlightstyle)| |
+|[Markdown options](#markdown-options)|[markdown-pdf-2.breaks](#markdown-pdf-2breaks)| |
+|[Emoji options](#emoji-options)|[markdown-pdf-2.emoji](#markdown-pdf-2emoji)| |
+|[Configuration options](#configuration-options)|[markdown-pdf-2.executablePath](#markdown-pdf-2executablepath)| |
+|[Common Options](#common-options)|[markdown-pdf-2.scale](#markdown-pdf-2scale)| |
+|[PDF options](#pdf-options)|[markdown-pdf-2.displayHeaderFooter](#markdown-pdf-2displayheaderfooter)|resource|
+||[markdown-pdf-2.headerTemplate](#markdown-pdf-2headertemplate)|resource|
+||[markdown-pdf-2.footerTemplate](#markdown-pdf-2footertemplate)|resource|
+||[markdown-pdf-2.printBackground](#markdown-pdf-2printbackground)|resource|
+||[markdown-pdf-2.orientation](#markdown-pdf-2orientation)|resource|
+||[markdown-pdf-2.pageRanges](#markdown-pdf-2pageranges)|resource|
+||[markdown-pdf-2.format](#markdown-pdf-2format)|resource|
+||[markdown-pdf-2.width](#markdown-pdf-2width)|resource|
+||[markdown-pdf-2.height](#markdown-pdf-2height)|resource|
+||[markdown-pdf-2.margin.top](#markdown-pdf-2margintop)|resource|
+||[markdown-pdf-2.margin.bottom](#markdown-pdf-2marginbottom)|resource|
+||[markdown-pdf-2.margin.right](#markdown-pdf-2marginright)|resource|
+||[markdown-pdf-2.margin.left](#markdown-pdf-2marginleft)|resource|
+|[PNG JPEG options](#png-jpeg-options)|[markdown-pdf-2.quality](#markdown-pdf-2quality)| |
+||[markdown-pdf-2.clip.x](#markdown-pdf-2clipx)| |
+||[markdown-pdf-2.clip.y](#markdown-pdf-2clipy)| |
+||[markdown-pdf-2.clip.width](#markdown-pdf-2clipwidth)| |
+||[markdown-pdf-2.clip.height](#markdown-pdf-2clipheight)| |
+||[markdown-pdf-2.omitBackground](#markdown-pdf-2omitbackground)| |
+|[PlantUML options](#plantuml-options)|[markdown-pdf-2.plantumlOpenMarker](#markdown-pdf-2plantumlopenmarker)| |
+||[markdown-pdf-2.plantumlCloseMarker](#markdown-pdf-2plantumlclosemarker)| |
+||[markdown-pdf-2.plantumlServer](#markdown-pdf-2plantumlserver)| |
+|[markdown-it-include options](#markdown-it-include-options)|[markdown-pdf-2.markdown-it-include.enable](#markdown-pdf-2markdown-it-includeenable)| |
+|[mermaid options](#mermaid-options)|[markdown-pdf-2.mermaidServer](#markdown-pdf-2mermaidserver)| |
 
 ### Save options
 
-#### `markdown-pdf.type`
+#### `markdown-pdf-2.type`
   - Output format: pdf, html, png, jpeg
   - Multiple output formats support
   - Default: pdf
 
 ```javascript
-"markdown-pdf.type": [
+"markdown-pdf-2.type": [
   "pdf",
   "html",
   "png",
@@ -239,16 +241,16 @@ If the download is not successful or you want to avoid downloading every time yo
 ],
 ```
 
-#### `markdown-pdf.convertOnSave`
+#### `markdown-pdf-2.convertOnSave`
   - Enable Auto convert on save
   - boolean. Default: false
   - To apply the settings, you need to restart Visual Studio Code
 
-#### `markdown-pdf.convertOnSaveExclude`
+#### `markdown-pdf-2.convertOnSaveExclude`
   - Excluded file name of convertOnSave option
 
 ```javascript
-"markdown-pdf.convertOnSaveExclude": [
+"markdown-pdf-2.convertOnSaveExclude": [
   "^work",
   "work.md$",
   "work|test",
@@ -257,12 +259,12 @@ If the download is not successful or you want to avoid downloading every time yo
 ],
 ```
 
-#### `markdown-pdf.outputDirectory`
+#### `markdown-pdf-2.outputDirectory`
   - Output Directory
   - All `\` need to be written as `\\` (Windows)
 
 ```javascript
-"markdown-pdf.outputDirectory": "C:\\work\\output",
+"markdown-pdf-2.outputDirectory": "C:\\work\\output",
 ```
 
   - Relative path
@@ -272,35 +274,35 @@ If the download is not successful or you want to avoid downloading every time yo
       - See [Multi-root Workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces)
 
 ```javascript
-"markdown-pdf.outputDirectory": "output",
+"markdown-pdf-2.outputDirectory": "output",
 ```
 
   - Relative path (home directory)
     - If path starts with  `~`, it will be interpreted as a relative path from the home directory
 
 ```javascript
-"markdown-pdf.outputDirectory": "~/output",
+"markdown-pdf-2.outputDirectory": "~/output",
 ```
 
   - If you set a directory with a `relative path`, it will be created if the directory does not exist
   - If you set a directory with an `absolute path`, an error occurs if the directory does not exist
 
-#### `markdown-pdf.outputDirectoryRelativePathFile`
-  - If `markdown-pdf.outputDirectoryRelativePathFile` option is set to `true`, the relative path set with [markdown-pdf.outputDirectory](#markdown-pdfoutputDirectory) is interpreted as relative from the file
+#### `markdown-pdf-2.outputDirectoryRelativePathFile`
+  - If `markdown-pdf-2.outputDirectoryRelativePathFile` option is set to `true`, the relative path set with [markdown-pdf-2.outputDirectory](#markdown-pdf-2outputDirectory) is interpreted as relative from the file
   - It can be used to avoid relative paths from folders and workspaces
   - boolean. Default: false
 
 ### Styles options
 
-#### `markdown-pdf.styles`
-  - A list of local paths to the stylesheets to use from the markdown-pdf
+#### `markdown-pdf-2.styles`
+  - A list of local paths to the stylesheets to use from the markdown-pdf-2
   - If the file does not exist, it will be skipped
   - All `\` need to be written as `\\` (Windows)
 
 ```javascript
-"markdown-pdf.styles": [
-  "C:\\Users\\<USERNAME>\\Documents\\markdown-pdf.css",
-  "/home/<USERNAME>/settings/markdown-pdf.css",
+"markdown-pdf-2.styles": [
+  "C:\\Users\\<USERNAME>\\Documents\\markdown-pdf-2.css",
+  "/home/<USERNAME>/settings/markdown-pdf-2.css",
 ],
 ```
 
@@ -311,8 +313,8 @@ If the download is not successful or you want to avoid downloading every time yo
       - See [Multi-root Workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces)
 
 ```javascript
-"markdown-pdf.styles": [
-  "markdown-pdf.css",
+"markdown-pdf-2.styles": [
+  "markdown-pdf-2.css",
 ],
 ```
 
@@ -320,87 +322,87 @@ If the download is not successful or you want to avoid downloading every time yo
     - If path starts with `~`, it will be interpreted as a relative path from the home directory
 
 ```javascript
-"markdown-pdf.styles": [
-  "~/.config/Code/User/markdown-pdf.css"
+"markdown-pdf-2.styles": [
+  "~/.config/Code/User/markdown-pdf-2.css"
 ],
 ```
 
-  - Online CSS (https://xxx/xxx.css) is applied correctly for JPG and PNG, but problems occur with PDF [#67](https://github.com/yzane/vscode-markdown-pdf/issues/67)
+  - Online CSS (https://xxx/xxx.css) is applied correctly for JPG and PNG, but problems occur with PDF [#67](https://github.com/yzane/vscode-markdown-pdf-2/issues/67)
 
 ```javascript
-"markdown-pdf.styles": [
-  "https://xxx/markdown-pdf.css"
+"markdown-pdf-2.styles": [
+  "https://xxx/markdown-pdf-2.css"
 ],
 ```
 
-#### `markdown-pdf.stylesRelativePathFile`
+#### `markdown-pdf-2.stylesRelativePathFile`
 
-  - If `markdown-pdf.stylesRelativePathFile` option is set to `true`, the relative path set with [markdown-pdf.styles](#markdown-pdfstyles) is interpreted as relative from the file
+  - If `markdown-pdf-2.stylesRelativePathFile` option is set to `true`, the relative path set with [markdown-pdf-2.styles](#markdown-pdf-2styles) is interpreted as relative from the file
   - It can be used to avoid relative paths from folders and workspaces
   - boolean. Default: false
 
-#### `markdown-pdf.includeDefaultStyles`
-  - Enable the inclusion of default Markdown styles (VSCode, markdown-pdf)
+#### `markdown-pdf-2.includeDefaultStyles`
+  - Enable the inclusion of default Markdown styles (VSCode, markdown-pdf-2)
   - boolean. Default: true
 
 ### Syntax highlight options
 
-#### `markdown-pdf.highlight`
+#### `markdown-pdf-2.highlight`
   - Enable Syntax highlighting
   - boolean. Default: true
 
-#### `markdown-pdf.highlightStyle`
+#### `markdown-pdf-2.highlightStyle`
   - Set the style file name. for example: github.css, monokai.css ...
   - [file name list](https://github.com/isagalaev/highlight.js/tree/master/src/styles)
   - demo site : https://highlightjs.org/static/demo/
 
 ```javascript
-"markdown-pdf.highlightStyle": "github.css",
+"markdown-pdf-2.highlightStyle": "github.css",
 ```
 
 ### Markdown options
 
-#### `markdown-pdf.breaks`
+#### `markdown-pdf-2.breaks`
   - Enable line breaks
   - boolean. Default: false
 
 ### Emoji options
 
-#### `markdown-pdf.emoji`
+#### `markdown-pdf-2.emoji`
   - Enable emoji. [EMOJI CHEAT SHEET](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
   - boolean. Default: true
 
 ### Configuration options
 
-#### `markdown-pdf.executablePath`
+#### `markdown-pdf-2.executablePath`
   - Path to a Chromium or Chrome executable to run instead of the bundled Chromium
   - All `\` need to be written as `\\` (Windows)
   - To apply the settings, you need to restart Visual Studio Code
 
 ```javascript
-"markdown-pdf.executablePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+"markdown-pdf-2.executablePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 ```
 
 ### Common Options
 
-#### `markdown-pdf.scale`
+#### `markdown-pdf-2.scale`
   - Scale of the page rendering
   - number. default: 1
 
 ```javascript
-"markdown-pdf.scale": 1
+"markdown-pdf-2.scale": 1
 ```
 
 ### PDF options
 
   - pdf only. [puppeteer page.pdf options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions)
 
-#### `markdown-pdf.displayHeaderFooter`
+#### `markdown-pdf-2.displayHeaderFooter`
   - Enable display header and footer
   - boolean. Default: true
 
-#### `markdown-pdf.headerTemplate`
-#### `markdown-pdf.footerTemplate`
+#### `markdown-pdf-2.headerTemplate`
+#### `markdown-pdf-2.footerTemplate`
   - HTML template for the print header and footer
   - `<span class='date'></span>` : formatted print date
   - `<span class='title'></span>` : markdown file name
@@ -409,111 +411,111 @@ If the download is not successful or you want to avoid downloading every time yo
   - `<span class='totalPages'></span>` : total pages in the document
 
 ```javascript
-"markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
+"markdown-pdf-2.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
 ```
 ```javascript
-"markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+"markdown-pdf-2.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
 ```
 
-#### `markdown-pdf.printBackground`
+#### `markdown-pdf-2.printBackground`
   - Print background graphics
   - boolean. Default: true
 
-#### `markdown-pdf.orientation`
+#### `markdown-pdf-2.orientation`
   - Paper orientation
   - portrait or landscape
   - Default: portrait
 
-#### `markdown-pdf.pageRanges`
+#### `markdown-pdf-2.pageRanges`
   - Paper ranges to print, e.g., '1-5, 8, 11-13'
   - Default: all pages
 
 ```javascript
-"markdown-pdf.pageRanges": "1,4-",
+"markdown-pdf-2.pageRanges": "1,4-",
 ```
 
-#### `markdown-pdf.format`
+#### `markdown-pdf-2.format`
   - Paper format
   - Letter, Legal, Tabloid, Ledger, A0, A1, A2, A3, A4, A5, A6
   - Default: A4
 
 ```javascript
-"markdown-pdf.format": "A4",
+"markdown-pdf-2.format": "A4",
 ```
 
-#### `markdown-pdf.width`
-#### `markdown-pdf.height`
+#### `markdown-pdf-2.width`
+#### `markdown-pdf-2.height`
   - Paper width / height, accepts values labeled with units(mm, cm, in, px)
-  - If it is set, it overrides the markdown-pdf.format option
+  - If it is set, it overrides the markdown-pdf-2.format option
 
 ```javascript
-"markdown-pdf.width": "10cm",
-"markdown-pdf.height": "20cm",
+"markdown-pdf-2.width": "10cm",
+"markdown-pdf-2.height": "20cm",
 ```
 
-#### `markdown-pdf.margin.top`
-#### `markdown-pdf.margin.bottom`
-#### `markdown-pdf.margin.right`
-#### `markdown-pdf.margin.left`
+#### `markdown-pdf-2.margin.top`
+#### `markdown-pdf-2.margin.bottom`
+#### `markdown-pdf-2.margin.right`
+#### `markdown-pdf-2.margin.left`
   - Paper margins.units(mm, cm, in, px)
 
 ```javascript
-"markdown-pdf.margin.top": "1.5cm",
-"markdown-pdf.margin.bottom": "1cm",
-"markdown-pdf.margin.right": "1cm",
-"markdown-pdf.margin.left": "1cm",
+"markdown-pdf-2.margin.top": "1.5cm",
+"markdown-pdf-2.margin.bottom": "1cm",
+"markdown-pdf-2.margin.right": "1cm",
+"markdown-pdf-2.margin.left": "1cm",
 ```
 
 ### PNG JPEG options
 
   - png and jpeg only. [puppeteer page.screenshot options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
 
-#### `markdown-pdf.quality`
+#### `markdown-pdf-2.quality`
   - jpeg only. The quality of the image, between 0-100. Not applicable to png images
 
 ```javascript
-"markdown-pdf.quality": 100,
+"markdown-pdf-2.quality": 100,
 ```
 
-#### `markdown-pdf.clip.x`
-#### `markdown-pdf.clip.y`
-#### `markdown-pdf.clip.width`
-#### `markdown-pdf.clip.height`
+#### `markdown-pdf-2.clip.x`
+#### `markdown-pdf-2.clip.y`
+#### `markdown-pdf-2.clip.width`
+#### `markdown-pdf-2.clip.height`
   - An object which specifies clipping region of the page
   - number
 
 ```javascript
 //  x-coordinate of top-left corner of clip area
-"markdown-pdf.clip.x": 0,
+"markdown-pdf-2.clip.x": 0,
 
 // y-coordinate of top-left corner of clip area
-"markdown-pdf.clip.y": 0,
+"markdown-pdf-2.clip.y": 0,
 
 // width of clipping area
-"markdown-pdf.clip.width": 1000,
+"markdown-pdf-2.clip.width": 1000,
 
 // height of clipping area
-"markdown-pdf.clip.height": 1000,
+"markdown-pdf-2.clip.height": 1000,
 ```
 
-#### `markdown-pdf.omitBackground`
+#### `markdown-pdf-2.omitBackground`
   - Hides default white background and allows capturing screenshots with transparency
   - boolean. Default: false
 
 ### PlantUML options
 
-#### `markdown-pdf.plantumlOpenMarker`
+#### `markdown-pdf-2.plantumlOpenMarker`
   - Oppening delimiter used for the plantuml parser.
   - Default: @startuml
 
-#### `markdown-pdf.plantumlCloseMarker`
+#### `markdown-pdf-2.plantumlCloseMarker`
   - Closing delimiter used for the plantuml parser.
   - Default: @enduml
 
-#### `markdown-pdf.plantumlServer`
+#### `markdown-pdf-2.plantumlServer`
   - Plantuml server. e.g. http://localhost:8080
   - Default: http://www.plantuml.com/plantuml
-  - For example, to run Plantuml Server locally [#139](https://github.com/yzane/vscode-markdown-pdf/issues/139) :
+  - For example, to run Plantuml Server locally [#139](https://github.com/yzane/vscode-markdown-pdf-2/issues/139) :
     ```
     docker run -d -p 8080:8080 plantuml/plantuml-server:jetty
     ```
@@ -521,13 +523,13 @@ If the download is not successful or you want to avoid downloading every time yo
 
 ### markdown-it-include options
 
-#### `markdown-pdf.markdown-it-include.enable`
+#### `markdown-pdf-2.markdown-it-include.enable`
   - Enable markdown-it-include.
   - boolean. Default: true
 
 ### mermaid options
 
-#### `markdown-pdf.mermaidServer`
+#### `markdown-pdf-2.mermaidServer`
   - mermaid server
   - Default: https://unpkg.com/mermaid/dist/mermaid.min.js
 
@@ -537,7 +539,7 @@ If the download is not successful or you want to avoid downloading every time yo
 
 ### How can I change emoji size ?
 
-1. Add the following to your stylesheet which was specified in the markdown-pdf.styles
+1. Add the following to your stylesheet which was specified in the markdown-pdf-2.styles
 
 ```css
 .emoji {
@@ -560,8 +562,8 @@ If you always want to output to the relative path directory from the Markdown fi
 For example, to output to the "output" directory in the same directory as the Markdown file, set it as follows.
 
 ```javascript
-"markdown-pdf.outputDirectory" : "output",
-"markdown-pdf.outputDirectoryRelativePathFile": true,
+"markdown-pdf-2.outputDirectory" : "output",
+"markdown-pdf-2.outputDirectoryRelativePathFile": true,
 ```
 
 ### Page Break
@@ -576,28 +578,28 @@ Please use the following to insert a page break.
 
 ## Known Issues
 
-### `markdown-pdf.styles` option
-* Online CSS (https://xxx/xxx.css) is applied correctly for JPG and PNG, but problems occur with PDF. [#67](https://github.com/yzane/vscode-markdown-pdf/issues/67)
+### `markdown-pdf-2.styles` option
+* Online CSS (https://xxx/xxx.css) is applied correctly for JPG and PNG, but problems occur with PDF. [#67](https://github.com/yzane/vscode-markdown-pdf-2/issues/67)
 
 
 ## [Release Notes](CHANGELOG.md)
 
 ### 1.4.4 (2020/03/19)
 * Change: mermaid javascript reads from URL instead of from local file
-  * Add: `markdown-pdf.mermaidServer` option
-  * add an option to disable mermaid [#175](https://github.com/yzane/vscode-markdown-pdf/issues/175)
-* Add: `markdown-pdf.plantumlServer` option
-  * support configuration of plantUML server [#139](https://github.com/yzane/vscode-markdown-pdf/issues/139)
+  * Add: `markdown-pdf-2.mermaidServer` option
+  * add an option to disable mermaid [#175](https://github.com/yzane/vscode-markdown-pdf-2/issues/175)
+* Add: `markdown-pdf-2.plantumlServer` option
+  * support configuration of plantUML server [#139](https://github.com/yzane/vscode-markdown-pdf-2/issues/139)
 * Add: configuration scope
-  * extend setting 'headerTemplate' with scope\.\.\. [#184](https://github.com/yzane/vscode-markdown-pdf/pull/184)
-* Update: [slug](https://github.com/yzane/vscode-markdown-pdf/commit/3f4aeaa724999c46fc37423d4b188fd7ce72ffce) for markdown-it-named-headers
-* Update: markdown.css, markdown-pdf.css
+  * extend setting 'headerTemplate' with scope\.\.\. [#184](https://github.com/yzane/vscode-markdown-pdf-2/pull/184)
+* Update: [slug](https://github.com/yzane/vscode-markdown-pdf-2/commit/3f4aeaa724999c46fc37423d4b188fd7ce72ffce) for markdown-it-named-headers
+* Update: markdown.css, markdown-pdf-2.css
 * Update: dependent packages
-* Fix: Fix for issue \#186 [#187](https://github.com/yzane/vscode-markdown-pdf/pull/187)
+* Fix: Fix for issue \#186 [#187](https://github.com/yzane/vscode-markdown-pdf-2/pull/187)
 * Fix: move the Meiryo font to the end of the font-family setting
-  * Meiryo font causing \\ to show as Â¥ [#83](https://github.com/yzane/vscode-markdown-pdf/issues/83)
-  * Backslash false encoded [#124](https://github.com/yzane/vscode-markdown-pdf/issues/124)
-  * Errors in which í•œê¸€\(korean word\) is not properly printed [#148](https://github.com/yzane/vscode-markdown-pdf/issues/148)
+  * Meiryo font causing \\ to show as Â¥ [#83](https://github.com/yzane/vscode-markdown-pdf-2/issues/83)
+  * Backslash false encoded [#124](https://github.com/yzane/vscode-markdown-pdf-2/issues/124)
+  * Errors in which í•œê¸€\(korean word\) is not properly printed [#148](https://github.com/yzane/vscode-markdown-pdf-2/issues/148)
 * Fix: Improve the configuration schema of package.json
     * Some settings can now be set from the settings editor.
 

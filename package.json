@@ -1,9 +1,9 @@
 {
-  "name": "markdown-pdf",
-  "displayName": "Markdown PDF",
-  "description": "Convert Markdown to PDF",
+  "name": "markdown-pdf-2",
+  "displayName": "Markdown PDF 2",
+  "description": "Convert Markdown to PDF. Forked from yzane/vscode-markdown-pdf.",
   "version": "1.4.4",
-  "publisher": "yzane",
+  "publisher": "tat3",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.0.0"
@@ -22,116 +22,116 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yzane/vscode-markdown-pdf.git"
+    "url": "https://github.com/tat3/vscode-markdown-pdf2.git"
   },
   "activationEvents": [
-    "onCommand:extension.markdown-pdf.settings",
-    "onCommand:extension.markdown-pdf.pdf",
-    "onCommand:extension.markdown-pdf.html",
-    "onCommand:extension.markdown-pdf.png",
-    "onCommand:extension.markdown-pdf.jpeg",
-    "onCommand:extension.markdown-pdf.all",
+    "onCommand:extension.markdown-pdf-2.settings",
+    "onCommand:extension.markdown-pdf-2.pdf",
+    "onCommand:extension.markdown-pdf-2.html",
+    "onCommand:extension.markdown-pdf-2.png",
+    "onCommand:extension.markdown-pdf-2.jpeg",
+    "onCommand:extension.markdown-pdf-2.all",
     "onLanguage:markdown"
   ],
   "main": "./extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.markdown-pdf.settings",
-        "title": "Markdown PDF: Export (settings.json)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.settings",
+        "title": "Markdown PDF 2: Export (settings.json)",
+        "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.pdf",
-        "title": "Markdown PDF: Export (pdf)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.pdf",
+        "title": "Markdown PDF 2: Export (pdf)",
+        "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.html",
-        "title": "Markdown PDF: Export (html)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.html",
+        "title": "Markdown PDF 2: Export (html)",
+        "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.png",
-        "title": "Markdown PDF: Export (png)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.png",
+        "title": "Markdown PDF 2: Export (png)",
+        "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.jpeg",
-        "title": "Markdown PDF: Export (jpeg)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.jpeg",
+        "title": "Markdown PDF 2: Export (jpeg)",
+        "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.all",
-        "title": "Markdown PDF: Export (all: pdf, html, png, jpeg)",
-        "group": "markdown-pdf"
+        "command": "extension.markdown-pdf-2.all",
+        "title": "Markdown PDF 2: Export (all: pdf, html, png, jpeg)",
+        "group": "markdown-pdf-2"
       }
     ],
     "menus": {
       "commandPalette": [
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.settings"
+          "command": "extension.markdown-pdf-2.settings"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.pdf"
+          "command": "extension.markdown-pdf-2.pdf"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.html"
+          "command": "extension.markdown-pdf-2.html"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.png"
+          "command": "extension.markdown-pdfa-2.png"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.jpeg"
+          "command": "extension.markdown-pdf-2.jpeg"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.all"
+          "command": "extension.markdown-pdf-2.all"
         }
       ],
       "editor/context": [
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.settings",
-          "group": "markdown-pdf@1"
+          "command": "extension.markdown-pdf-2.settings",
+          "group": "markdown-pdf-2@1"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.pdf",
-          "group": "markdown-pdf@2"
+          "command": "extension.markdown-pdf-2.pdf",
+          "group": "markdown-pdf-2@2"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.html",
-          "group": "markdown-pdf@3"
+          "command": "extension.markdown-pdf-2.html",
+          "group": "markdown-pdf-2@3"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.png",
-          "group": "markdown-pdf@4"
+          "command": "extension.markdown-pdf-2.png",
+          "group": "markdown-pdf-2@4"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.jpeg",
-          "group": "markdown-pdf@5"
+          "command": "extension.markdown-pdf-2.jpeg",
+          "group": "markdown-pdf-2@5"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.all",
-          "group": "markdown-pdf@6"
+          "command": "extension.markdown-pdf-2.all",
+          "group": "markdown-pdf-2@6"
         }
       ]
     },
     "configuration": {
       "type": "object",
-      "title": "Markdown PDF",
+      "title": "Markdown PDF 2",
       "properties": {
-        "markdown-pdf.type": {
+        "markdown-pdf-2.type": {
           "type": "array",
           "default": [
             "pdf"
@@ -141,12 +141,12 @@
           },
           "description": "Output format: pdf, html, png, jpeg. Multiple output formats support"
         },
-        "markdown-pdf.convertOnSave": {
+        "markdown-pdf-2.convertOnSave": {
           "type": "boolean",
           "default": false,
           "description": "Enable Auto convert on save. To apply the settings, you need to restart Visual Studio Code"
         },
-        "markdown-pdf.convertOnSaveExclude": {
+        "markdown-pdf-2.convertOnSaveExclude": {
           "type": "array",
           "default": [],
           "items": {
@@ -154,40 +154,40 @@
           },
           "description": "Excluded file name of convertOnSave option"
         },
-        "markdown-pdf.outputDirectory": {
+        "markdown-pdf-2.outputDirectory": {
           "type": "string",
           "default": "",
           "description": "Output Directory."
         },
-        "markdown-pdf.outputDirectoryRelativePathFile": {
+        "markdown-pdf-2.outputDirectoryRelativePathFile": {
           "type": "boolean",
           "default": false,
-          "description": "If markdown-pdf.outputDirectoryRelativePathFile option is set to true, the relative path set with markdown-pdf.styles is interpreted as relative from the file"
+          "description": "If markdown-pdf-2.outputDirectoryRelativePathFile option is set to true, the relative path set with markdown-pdf-2.styles is interpreted as relative from the file"
         },
-        "markdown-pdf.styles": {
+        "markdown-pdf-2.styles": {
           "type": "array",
           "default": [],
           "items": {
             "type": "string"
           },
-          "description": "A list of local paths to the stylesheets to use from the markdown-pdf. All '\\' need to be written as '\\\\'."
+          "description": "A list of local paths to the stylesheets to use from the markdown-pdf-2. All '\\' need to be written as '\\\\'."
         },
-        "markdown-pdf.stylesRelativePathFile": {
+        "markdown-pdf-2.stylesRelativePathFile": {
           "type": "boolean",
           "default": false,
-          "description": "If markdown-pdf.stylesRelativePathFile option is set to true, the relative path set with markdown-pdf.styles is interpreted as relative from the file"
+          "description": "If markdown-pdf-2.stylesRelativePathFile option is set to true, the relative path set with markdown-pdf-2.styles is interpreted as relative from the file"
         },
-        "markdown-pdf.includeDefaultStyles": {
+        "markdown-pdf-2.includeDefaultStyles": {
           "type": "boolean",
           "default": true,
-          "description": "Enable the inclusion of default Markdown styles (VSCode, markdown-pdf)"
+          "description": "Enable the inclusion of default Markdown styles (VSCode, markdown-pdf-2)"
         },
-        "markdown-pdf.highlight": {
+        "markdown-pdf-2.highlight": {
           "type": "boolean",
           "default": true,
           "description": "Enable Syntax highlighting"
         },
-        "markdown-pdf.highlightStyle": {
+        "markdown-pdf-2.highlightStyle": {
           "type": [
             "string",
             "null"
@@ -289,51 +289,51 @@
           "default": "",
           "markdownDescription": "Set the style file name. [highlight.js demo](https://highlightjs.org/static/demo/) [highlight.js/src/styles](https://github.com/highlightjs/highlight.js/tree/master/src/styles)"
         },
-        "markdown-pdf.breaks": {
+        "markdown-pdf-2.breaks": {
           "type": "boolean",
           "default": false,
           "description": "Enable line breaks"
         },
-        "markdown-pdf.emoji": {
+        "markdown-pdf-2.emoji": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Enable emoji. [Emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)"
         },
-        "markdown-pdf.executablePath": {
+        "markdown-pdf-2.executablePath": {
           "type": "string",
           "default": "",
           "description": "Path to a Chromium or Chrome executable to run instead of the bundled Chromium."
         },
-        "markdown-pdf.scale": {
+        "markdown-pdf-2.scale": {
           "type": "number",
           "default": 1,
           "description": "Scale of the page rendering."
         },
-        "markdown-pdf.displayHeaderFooter": {
+        "markdown-pdf-2.displayHeaderFooter": {
           "type": "boolean",
           "default": true,
           "description": "pdf only. Display header and footer.",
           "scope": "resource"
         },
-        "markdown-pdf.headerTemplate": {
+        "markdown-pdf-2.headerTemplate": {
           "type": "string",
           "default": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
           "description": "pdf only. HTML template for the print header.",
           "scope": "resource"
         },
-        "markdown-pdf.footerTemplate": {
+        "markdown-pdf-2.footerTemplate": {
           "type": "string",
           "default": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
           "description": "pdf only. HTML template for the print footer.",
           "scope": "resource"
         },
-        "markdown-pdf.printBackground": {
+        "markdown-pdf-2.printBackground": {
           "type": "boolean",
           "default": true,
           "description": "pdf only. Print background graphics.",
           "scope": "resource"
         },
-        "markdown-pdf.orientation": {
+        "markdown-pdf-2.orientation": {
           "type": "string",
           "enum": [
             "portrait",
@@ -343,13 +343,13 @@
           "description": "pdf only. Paper orientation. portrait or landscape.",
           "scope": "resource"
         },
-        "markdown-pdf.pageRanges": {
+        "markdown-pdf-2.pageRanges": {
           "type": "string",
           "default": "",
           "description": "pdf only. Paper ranges to print, e.g., '1-5, 8, 11-13'.",
           "scope": "resource"
         },
-        "markdown-pdf.format": {
+        "markdown-pdf-2.format": {
           "type": "string",
           "enum": [
             "Letter",
@@ -368,48 +368,48 @@
           "description": "pdf only. Paper format [Letter, Legal, Tabloid, Ledger, A0, A1, A2, A3, A4, A5, A6].",
           "scope": "resource"
         },
-        "markdown-pdf.width": {
+        "markdown-pdf-2.width": {
           "type": "string",
           "default": "",
-          "description": "pdf only. Paper width, accepts values labeled with units(mm, cm, in, px). If it is set, it overrides the markdown-pdf.format option.",
+          "description": "pdf only. Paper width, accepts values labeled with units(mm, cm, in, px). If it is set, it overrides the markdown-pdf-2.format option.",
           "scope": "resource"
         },
-        "markdown-pdf.height": {
+        "markdown-pdf-2.height": {
           "type": "string",
           "default": "",
-          "description": "pdf only. Paper height, accepts values labeled with units(mm, cm, in, px). If it is set, it overrides the markdown-pdf.format option.",
+          "description": "pdf only. Paper height, accepts values labeled with units(mm, cm, in, px). If it is set, it overrides the markdown-pdf-2.format option.",
           "scope": "resource"
         },
-        "markdown-pdf.margin.top": {
+        "markdown-pdf-2.margin.top": {
           "type": "string",
           "default": "1.5cm",
           "description": "Page Option. Border Top. units: mm, cm, in, px",
           "scope": "resource"
         },
-        "markdown-pdf.margin.bottom": {
+        "markdown-pdf-2.margin.bottom": {
           "type": "string",
           "default": "1cm",
           "description": "Page Option. Border bottom. units: mm, cm, in, px",
           "scope": "resource"
         },
-        "markdown-pdf.margin.right": {
+        "markdown-pdf-2.margin.right": {
           "type": "string",
           "default": "1cm",
           "description": "Page Option. Border right. units: mm, cm, in, px",
           "scope": "resource"
         },
-        "markdown-pdf.margin.left": {
+        "markdown-pdf-2.margin.left": {
           "type": "string",
           "default": "1cm",
           "description": "Page Option. Border left. units: mm, cm, in, px",
           "scope": "resource"
         },
-        "markdown-pdf.quality": {
+        "markdown-pdf-2.quality": {
           "type": "number",
           "default": 100,
           "description": "jpeg only. The quality of the image, between 0-100. Not applicable to png images."
         },
-        "markdown-pdf.clip.x": {
+        "markdown-pdf-2.clip.x": {
           "type": [
             "number",
             "null"
@@ -417,7 +417,7 @@
           "default": "",
           "description": "png and jpeg only. x-coordinate of top-left corner of clip area."
         },
-        "markdown-pdf.clip.y": {
+        "markdown-pdf-2.clip.y": {
           "type": [
             "number",
             "null"
@@ -425,7 +425,7 @@
           "default": "",
           "description": "png and jpeg only. y-coordinate of top-left corner of clip area."
         },
-        "markdown-pdf.clip.width": {
+        "markdown-pdf-2.clip.width": {
           "type": [
             "number",
             "null"
@@ -433,7 +433,7 @@
           "default": "",
           "description": "png and jpeg only. width of clipping area."
         },
-        "markdown-pdf.clip.height": {
+        "markdown-pdf-2.clip.height": {
           "type": [
             "number",
             "null"
@@ -441,37 +441,37 @@
           "default": "",
           "description": "png and jpeg only. height of clipping area."
         },
-        "markdown-pdf.omitBackground": {
+        "markdown-pdf-2.omitBackground": {
           "type": "boolean",
           "default": false,
           "description": "png and jpeg only. Hides default white background and allows capturing screenshots with transparency."
         },
-        "markdown-pdf.plantumlOpenMarker": {
+        "markdown-pdf-2.plantumlOpenMarker": {
           "type": "string",
           "default": "@startuml",
           "description": "Oppening delimiter used for the plantuml parser."
         },
-        "markdown-pdf.plantumlCloseMarker": {
+        "markdown-pdf-2.plantumlCloseMarker": {
           "type": "string",
           "default": "@enduml",
           "description": "Closing delimiter used for the plantuml parser."
         },
-        "markdown-pdf.plantumlServer": {
+        "markdown-pdf-2.plantumlServer": {
           "type": "string",
           "default": "http://www.plantuml.com/plantuml",
           "description": "plantuml server"
         },
-        "markdown-pdf.StatusbarMessageTimeout": {
+        "markdown-pdf-2.StatusbarMessageTimeout": {
           "type": "number",
           "default": 10000,
           "description": "Statusbar message timeout [milliseconds]"
         },
-        "markdown-pdf.markdown-it-include.enable": {
+        "markdown-pdf-2.markdown-it-include.enable": {
           "type": "boolean",
           "default": true,
           "description": "Enable markdown-it-include. "
         },
-        "markdown-pdf.mermaidServer": {
+        "markdown-pdf-2.mermaidServer": {
           "type": "string",
           "default": "https://unpkg.com/mermaid/dist/mermaid.min.js",
           "description": "mermaid server."
