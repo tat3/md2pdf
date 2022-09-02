@@ -1,5 +1,5 @@
 {
-    "markdown-pdf.outputDirectory": "sample",
-    "markdown-pdf.markdown-it-include.enable": false,
+    "markdown-pdf-2.outputDirectory": "sample",
+    "markdown-pdf-2.markdown-it-include.enable": false,
     "debug.node.autoAttach": "on"
 }

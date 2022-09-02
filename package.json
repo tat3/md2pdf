@@ -1,6 +1,6 @@
 {
   "name": "markdown-pdf-2",
-  "displayName": "Markdown PDF 2 2",
+  "displayName": "Markdown PDF 2",
   "description": "Convert Markdown to PDF. Forked from yzane/vscode-markdown-pdf.",
   "version": "1.4.4",
   "publisher": "tat3",
@@ -25,44 +25,44 @@
     "url": "https://github.com/tat3/vscode-markdown-pdf2.git"
   },
   "activationEvents": [
-    "onCommand:extension.markdown-pdf.settings",
-    "onCommand:extension.markdown-pdf.pdf",
-    "onCommand:extension.markdown-pdf.html",
-    "onCommand:extension.markdown-pdf.png",
-    "onCommand:extension.markdown-pdf.jpeg",
-    "onCommand:extension.markdown-pdf.all",
+    "onCommand:extension.markdown-pdf-2.settings",
+    "onCommand:extension.markdown-pdf-2.pdf",
+    "onCommand:extension.markdown-pdf-2.html",
+    "onCommand:extension.markdown-pdf-2.png",
+    "onCommand:extension.markdown-pdf-2.jpeg",
+    "onCommand:extension.markdown-pdf-2.all",
     "onLanguage:markdown"
   ],
   "main": "./extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.markdown-pdf.settings",
+        "command": "extension.markdown-pdf-2.settings",
         "title": "Markdown PDF 2: Export (settings.json)",
         "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.pdf",
+        "command": "extension.markdown-pdf-2.pdf",
         "title": "Markdown PDF 2: Export (pdf)",
         "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.html",
+        "command": "extension.markdown-pdf-2.html",
         "title": "Markdown PDF 2: Export (html)",
         "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.png",
+        "command": "extension.markdown-pdf-2.png",
         "title": "Markdown PDF 2: Export (png)",
         "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.jpeg",
+        "command": "extension.markdown-pdf-2.jpeg",
         "title": "Markdown PDF 2: Export (jpeg)",
         "group": "markdown-pdf-2"
       },
       {
-        "command": "extension.markdown-pdf.all",
+        "command": "extension.markdown-pdf-2.all",
         "title": "Markdown PDF 2: Export (all: pdf, html, png, jpeg)",
         "group": "markdown-pdf-2"
       }
@@ -71,58 +71,58 @@
       "commandPalette": [
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.settings"
+          "command": "extension.markdown-pdf-2.settings"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.pdf"
+          "command": "extension.markdown-pdf-2.pdf"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.html"
+          "command": "extension.markdown-pdf-2.html"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.png"
+          "command": "extension.markdown-pdfa-2.png"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.jpeg"
+          "command": "extension.markdown-pdf-2.jpeg"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.all"
+          "command": "extension.markdown-pdf-2.all"
         }
       ],
       "editor/context": [
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.settings",
+          "command": "extension.markdown-pdf-2.settings",
           "group": "markdown-pdf-2@1"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.pdf",
+          "command": "extension.markdown-pdf-2.pdf",
           "group": "markdown-pdf-2@2"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.html",
+          "command": "extension.markdown-pdf-2.html",
           "group": "markdown-pdf-2@3"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.png",
+          "command": "extension.markdown-pdf-2.png",
           "group": "markdown-pdf-2@4"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.jpeg",
+          "command": "extension.markdown-pdf-2.jpeg",
           "group": "markdown-pdf-2@5"
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdf.all",
+          "command": "extension.markdown-pdf-2.all",
           "group": "markdown-pdf-2@6"
         }
       ]
