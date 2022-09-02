@@ -2,7 +2,7 @@
   "name": "markdown-pdf-2",
   "displayName": "Markdown PDF 2",
   "description": "Convert Markdown to PDF. Forked from yzane/vscode-markdown-pdf.",
-  "version": "1.4.4",
+  "version": "0.1.0",
   "publisher": "tat3",
   "icon": "images/icon.png",
   "engines": {

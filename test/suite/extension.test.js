@@ -20,7 +20,7 @@ suite('Extension Test Suite', () => {
         this.timeout(6000000);
         var textDocument = await vscode.workspace.openTextDocument(path.resolve(__dirname, 'mermaid.md'));
         await vscode.window.showTextDocument(textDocument);
-        await vscode.commands.executeCommand('extension.markdown-pdf.all');
+        await vscode.commands.executeCommand('extension.markdown-pdf-2.all');
 
         rimraf.sync(path.resolve(__dirname, 'mermaid.pdf'));
         rimraf.sync(path.resolve(__dirname, 'mermaid.jpeg'));
