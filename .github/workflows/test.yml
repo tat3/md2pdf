@@ -16,10 +16,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-
-    - name: Set version to package.json
-      run: sed -i -e "s/EXTENSION_VERSION/0.0.0/g" package.json
-
     - run: yarn install
     - run: xvfb-run -a yarn test
       if: runner.os == 'Linux'
