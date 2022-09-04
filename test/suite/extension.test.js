@@ -17,7 +17,12 @@ suite('Extension Test Suite', () => {
         this.timeout(60 * 1000);
         const revision = require('puppeteer-core/package.json').puppeteer.chromium_revision;
         const puppeteer = require('puppeteer-core');
-        const bf = puppeteer.createBrowserFetcher();
+        const bf = puppeteer.createBrowserFetcher({
+            /* Specify chrome location of test runner.
+            By default, the test runner downloads and uses chrome in node_modules/puppeteer-core/.local-chromium.
+            The emurated vscode does it in <project dir>/.local-chromium because puppeteer is bundled and not in node_modules.  */
+            path: path.resolve(__dirname, '../../.local-chromium'),
+        });
         await bf.download(revision);
         vscode.window.showInformationMessage('Start all tests.');
     });

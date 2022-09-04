@@ -11,8 +11,6 @@ const extension = 'markdown-pdf-2';
 function activate(context) {
   init();
 
-  const commandPrefix = `extension.${extension}`;
-
   var commands = ['settings', 'pdf', 'html', 'png', 'jpeg', 'all']
     .map(type => vscode.commands.registerCommand(
       `extension.${extension}.${type}`,
@@ -235,7 +233,7 @@ function convertMarkdownToHtml(filename, type, text) {
     md.use(require('markdown-it-emoji'), options);
     md.renderer.rules.emoji = function (token, idx) {
       var emoji = token[idx].markup;
-      var emojipath = path.join(__dirname, 'node_modules', 'emoji-images', 'pngs', emoji + '.png');
+      var emojipath = path.join(__dirname, 'data', 'emoji-images', emoji + '.png');
       var emojidata = readFile(emojipath, null).toString('base64');
       if (emojidata) {
         return '<img class="emoji" alt="' + emoji + '" src="data:image/png;base64,' + emojidata + '" />';
@@ -691,7 +689,7 @@ function readStyles(uri) {
     if (ishighlight) {
       if (highlightStyle) {
         var css = vscode.workspace.getConfiguration(extension)['highlightStyle'] || 'github.css';
-        filename = path.join(__dirname, 'node_modules', 'highlight.js', 'styles', css);
+        filename = path.join(__dirname, 'data', 'highlight.js', css);
         style += makeCss(filename);
       } else {
         filename = path.join(__dirname, 'styles', 'tomorrow.css');
@@ -800,7 +798,7 @@ function installChromium() {
     var StatusbarMessageTimeout = vscode.workspace.getConfiguration(extension)['StatusbarMessageTimeout'];
     const puppeteer = require('puppeteer-core');
     const browserFetcher = puppeteer.createBrowserFetcher();
-    const revision = require(path.join(__dirname, 'node_modules', 'puppeteer-core', 'package.json')).puppeteer.chromium_revision;
+    const revision = require('puppeteer-core/package.json').puppeteer.chromium_revision;
     const revisionInfo = browserFetcher.revisionInfo(revision);
 
     // download Chromium

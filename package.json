@@ -33,7 +33,7 @@
     "onCommand:extension.markdown-pdf-2.all",
     "onLanguage:markdown"
   ],
-  "main": "./extension",
+  "main": "./extension.min.js",
   "contributes": {
     "commands": [
       {
@@ -480,12 +480,14 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "node ./src/compile",
-    "test": "node ./test/runTest.js",
-    "build": "vsce package"
+    "vscode:prepublish": "./scripts/build.sh",
+    "test": "./scripts/build.sh && node ./test/runTest.js",
+    "build": "vsce package",
+    "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node"
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.1.5",
+    "esbuild": "^0.15.6",
     "glob": "^7.1.6",
     "mocha": "^7.1.1",
     "removeNPMAbsolutePaths": "^2.0.0"
