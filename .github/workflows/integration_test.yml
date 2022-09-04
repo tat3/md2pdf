@@ -18,4 +18,5 @@ jobs:
     - run: xvfb-run -a yarn test
       if: runner.os == 'Linux'
     - run: yarn test
+      shell: bash
       if: runner.os != 'Linux'

@@ -481,7 +481,7 @@
   },
   "scripts": {
     "vscode:prepublish": "./scripts/build.sh",
-    "test": "./scripts/build.sh && node ./test/runTest.js",
+    "test": "bash ./scripts/build.sh && node ./test/runTest.js",
     "build": "vsce package",
     "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node"
   },
