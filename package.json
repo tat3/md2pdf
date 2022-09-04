@@ -83,7 +83,7 @@
         },
         {
           "when": "resourceLangId == markdown",
-          "command": "extension.markdown-pdfa-2.png"
+          "command": "extension.markdown-pdf-2.png"
         },
         {
           "when": "resourceLangId == markdown",

@@ -1,8 +1,9 @@
 'use strict';
 
 const rimraf = require('rimraf')
+const fs = require('fs');
 
-// const assert = require('assert');
+const assert = require('assert');
 const before = require('mocha').before;
 const path = require('path');
 
@@ -12,7 +13,12 @@ const vscode = require('vscode');
 // const myExtension = require('.extension');
 
 suite('Extension Test Suite', () => {
-    before(() => {
+    before(async function() {
+        this.timeout(60 * 1000);
+        const revision = require('puppeteer-core/package.json').puppeteer.chromium_revision;
+        const puppeteer = require('puppeteer-core');
+        const bf = puppeteer.createBrowserFetcher();
+        await bf.download(revision);
         vscode.window.showInformationMessage('Start all tests.');
     });
 
@@ -22,9 +28,15 @@ suite('Extension Test Suite', () => {
         await vscode.window.showTextDocument(textDocument);
         await vscode.commands.executeCommand('extension.markdown-pdf-2.all');
 
-        rimraf.sync(path.resolve(__dirname, 'mermaid.pdf'));
-        rimraf.sync(path.resolve(__dirname, 'mermaid.jpeg'));
-        rimraf.sync(path.resolve(__dirname, 'mermaid.png'));
-        rimraf.sync(path.resolve(__dirname, 'mermaid.html'));
+        const join = (ext) => path.resolve(__dirname, `mermaid.${ext}`);
+        assert.ok(fs.existsSync(join('pdf')));
+        assert.ok(fs.existsSync(join('jpeg')));
+        assert.ok(fs.existsSync(join('png')));
+        assert.ok(fs.existsSync(join('html')));
+
+        rimraf.sync(join('pdf'));
+        rimraf.sync(join('jpeg'));
+        rimraf.sync(join('png'));
+        rimraf.sync(join('html'));
     });
 });
