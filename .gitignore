@@ -5,3 +5,7 @@ work/**
 *.vsix
 *.bat
 .eslintrc.json
+*.min.js
+.local-chromium
+data/emoji-images/
+data/highlight.js/
