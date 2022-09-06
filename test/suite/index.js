@@ -10,7 +10,7 @@ module.exports = {
         const mocha = new Mocha({
             ui: 'tdd'
         });
-        mocha.useColors(true);
+        mocha.color(true);
 
         const testsRoot = path.resolve(__dirname, '..');
 
