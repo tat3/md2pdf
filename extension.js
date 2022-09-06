@@ -166,7 +166,10 @@ function convertMarkdownToHtml(filename, type, text) {
 
           if (lang && hljs.getLanguage(lang)) {
             try {
-              str = hljs.highlight(lang, str, true).value;
+              str = hljs.highlight(str, {
+                language: lang,
+                ignoreIllegals: true,
+              }).value;
             } catch (error) {
               str = md.utils.escapeHtml(str);
 
@@ -281,7 +284,7 @@ function convertMarkdownToHtml(filename, type, text) {
   if (vscode.workspace.getConfiguration(extension)['markdown-it-include']['enable']) {
     md.use(require("markdown-it-include"), {
       root: path.dirname(filename),
-      includeRe: /:\[.+\]\((.+\..+)\)/i
+      includeRe: /:\[.+\](\(.+\..+\))/i
     });
   }
 
@@ -798,7 +801,7 @@ function installChromium() {
     var StatusbarMessageTimeout = vscode.workspace.getConfiguration(extension)['StatusbarMessageTimeout'];
     const puppeteer = require('puppeteer-core');
     const browserFetcher = puppeteer.createBrowserFetcher();
-    const revision = require('puppeteer-core/package.json').puppeteer.chromium_revision;
+    const revision = require('puppeteer-core/lib/cjs/puppeteer/revisions.js').PUPPETEER_REVISIONS.chromium;
     const revisionInfo = browserFetcher.revisionInfo(revision);
 
     // download Chromium

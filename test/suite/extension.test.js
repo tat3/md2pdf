@@ -15,7 +15,7 @@ const vscode = require('vscode');
 suite('Extension Test Suite', () => {
     before(async function() {
         this.timeout(60 * 1000);
-        const revision = require('puppeteer-core/package.json').puppeteer.chromium_revision;
+        const revision = require('puppeteer-core/lib/cjs/puppeteer/revisions.js').PUPPETEER_REVISIONS.chromium;
         const puppeteer = require('puppeteer-core');
         const bf = puppeteer.createBrowserFetcher({
             /* Specify chrome location of test runner.
