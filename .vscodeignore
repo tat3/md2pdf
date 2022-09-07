@@ -10,3 +10,4 @@ work/**
 sample/**
 node_modules
 .local-chromium
+integration-test

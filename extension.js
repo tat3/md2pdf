@@ -1,5 +1,5 @@
 'use strict';
-var vscode = require('vscode');
+const vscode = process.env.NODE_ENV === 'production' ? require('vscode') : require('./src/vscode-tester')
 var path = require('path');
 var fs = require('fs');
 var url = require('url');
@@ -805,7 +805,7 @@ function installChromium() {
     const revisionInfo = browserFetcher.revisionInfo(revision);
 
     // download Chromium
-    browserFetcher.download(revisionInfo.revision, onProgress)
+    return browserFetcher.download(revisionInfo.revision, onProgress)
       .then(() => browserFetcher.localRevisions())
       .then(onSuccess)
       .catch(onError);

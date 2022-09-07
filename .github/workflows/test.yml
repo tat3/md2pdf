@@ -14,4 +14,5 @@ jobs:
       with:
         node-version: 16.x
     - run: yarn install
-    - run: xvfb-run -a yarn test
+    - run: yarn test
+    - run: xvfb-run -a yarn integration-test

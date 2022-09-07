@@ -481,15 +481,17 @@
   },
   "scripts": {
     "vscode:prepublish": "./scripts/build.sh",
-    "test": "bash ./scripts/build.sh && node ./test/runTest.js",
+    "integration-test": "bash ./scripts/build.sh && node ./integration-test/runTest.js",
+    "test": "mocha test/",
     "build": "vsce package",
-    "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node"
+    "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.1.5",
     "esbuild": "^0.15.6",
     "glob": "^8.0.3",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "rewire": "^6.0.0"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
