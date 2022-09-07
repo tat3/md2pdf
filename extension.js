@@ -805,7 +805,7 @@ function installChromium() {
     const revisionInfo = browserFetcher.revisionInfo(revision);
 
     // download Chromium
-    browserFetcher.download(revisionInfo.revision, onProgress)
+    return browserFetcher.download(revisionInfo.revision, onProgress)
       .then(() => browserFetcher.localRevisions())
       .then(onSuccess)
       .catch(onError);

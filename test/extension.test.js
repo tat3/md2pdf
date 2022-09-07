@@ -10,6 +10,7 @@ const vscode = require('../src/vscode-tester');
 const makeHtml = extension.__get__('makeHtml');
 const converMakrdownToHtml = extension.__get__('convertMarkdownToHtml');
 const exportPdf = extension.__get__('exportPdf');
+const installChromium = extension.__get__('installChromium');
 
 
 describe('it works', () => {
@@ -18,11 +19,14 @@ describe('it works', () => {
   });
 });
 
-describe('test extension', () => {
-  before(() => {
+describe('test extension', function() {
+  this.timeout(100*1000);
+
+  before(async () => {
     vscode.commands.init();
     vscode.window.init();
     vscode.workspace.init();
+    await installChromium();
   });
 
   it('have activate and deactivate function', () => {
