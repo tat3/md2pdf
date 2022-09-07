@@ -1,4 +1,5 @@
 const assert = require('assert');
+const rimraf = require('rimraf')
 const fs = require('fs');
 const before = require('mocha').before;
 const rewire = require('rewire');
@@ -8,6 +9,7 @@ const vscode = require('../src/vscode-tester');
 
 const makeHtml = extension.__get__('makeHtml');
 const converMakrdownToHtml = extension.__get__('convertMarkdownToHtml');
+const exportPdf = extension.__get__('exportPdf');
 
 
 describe('it works', () => {
@@ -45,4 +47,15 @@ describe('test extension', () => {
     const html = makeHtml(inner, helper.uri(`${base}.html`));
     assert.equal(html, fs.readFileSync(`${base}.html`, 'utf-8'))
   })
+
+  it('convert html to pdf', async () => {
+    const base = process.cwd() + '/test/data/basic';
+    const html = fs.readFileSync(`${base}.html`, 'utf-8');
+
+    const pdf_path = `${base}.pdf`
+    rimraf.sync(pdf_path);
+    const pdf = await exportPdf(html, pdf_path, 'pdf', helper.uri(`${base}.md`));
+    assert.ok(fs.existsSync(pdf_path));
+  })
+
 })

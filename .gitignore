@@ -9,3 +9,4 @@ work/**
 .local-chromium
 data/emoji-images/
 data/highlight.js/
+test/data/*.pdf

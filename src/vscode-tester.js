@@ -56,6 +56,9 @@ class Window {
       dispose: () => {},
     }
   }
+  withProgress({}, f) {
+    return f()
+  }
 }
 
 class Commands {
@@ -97,9 +100,15 @@ class Uri {
   constructor(path) {
     this.$mid = 1
     this.fsPath = path
-    this.external = path
+    this.external = `file://${path}`
     this.path = path
     this.scheme = 'file'
+  }
+  static file(path) {
+    return new Uri(path)
+  }
+  toString() {
+    return this.external
   }
 }
 
@@ -119,4 +128,11 @@ module.exports = {
   commands,
   workspace,
   helper: new Helper(),
+  ProgressLocation: {
+    Notification: '',
+  },
+  env: {
+    language: 'ja',
+  },
+  Uri,
 };
