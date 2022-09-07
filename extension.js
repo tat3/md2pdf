@@ -1,5 +1,5 @@
 'use strict';
-var vscode = require('vscode');
+const vscode = process.env.NODE_ENV === 'production' ? require('vscode') : require('./src/vscode-tester')
 var path = require('path');
 var fs = require('fs');
 var url = require('url');

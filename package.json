@@ -481,9 +481,10 @@
   },
   "scripts": {
     "vscode:prepublish": "./scripts/build.sh",
-    "test": "bash ./scripts/build.sh && node ./test/runTest.js",
+    "integration-test": "bash ./scripts/build.sh && node ./integration-test/runTest.js",
+    "test": "NODE_ENV=test mocha test/",
     "build": "vsce package",
-    "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node"
+    "esbuild": "esbuild ./extension.js --bundle --outfile=extension.min.js --external:vscode --format=cjs --platform=node --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.1.5",
