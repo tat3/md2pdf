@@ -15,8 +15,9 @@ jobs:
       with:
         node-version: 16.x
     - run: yarn install
-    - run: xvfb-run -a yarn test
-      if: runner.os == 'Linux'
     - run: yarn test
+    - run: xvfb-run -a yarn integration-test
+      if: runner.os == 'Linux'
+    - run: yarn integration-test
       shell: bash
       if: runner.os != 'Linux'
