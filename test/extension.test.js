@@ -11,6 +11,7 @@ const makeHtml = extension.__get__('makeHtml');
 const converMakrdownToHtml = extension.__get__('convertMarkdownToHtml');
 const exportPdf = extension.__get__('exportPdf');
 const installChromium = extension.__get__('installChromium');
+const readStyles = extension.__get__('readStyles');
 
 
 describe('it works', () => {
@@ -62,4 +63,39 @@ describe('test extension', function() {
     assert.ok(fs.existsSync(pdf_path));
   })
 
+  it('read default styles', () => {
+    const contain = (text, path) => {
+      const absPath = process.cwd() + path;
+      const file = fs.readFileSync(absPath, 'utf-8');
+      return text.includes(file);
+    }
+    const md = process.cwd() + `/test/data/basic.md`;
+    const uri = helper.uri(md);
+    const style = readStyles(uri);
+
+    assert.ok(contain(style, '/styles/markdown.css'));
+    assert.ok(contain(style, '/styles/markdown-pdf.css'));
+    assert.ok(contain(style, '/styles/tomorrow.css'));
+    assert.ok(!contain(style, '/styles/numbering.css'));
+  })
+
+  it('read number heading style', () => {
+    const contain = (text, path) => {
+      const absPath = process.cwd() + path;
+      const file = fs.readFileSync(absPath, 'utf-8');
+      return text.includes(file);
+    }
+    const md = process.cwd() + `/test/data/basic.md`;
+    const uri = helper.uri(md);
+    helper.setConfig((config) => ({
+      ...config,
+      'styleNumberHeading': true,
+    }))
+    const style = readStyles(uri);
+
+    assert.ok(contain(style, '/styles/markdown.css'));
+    assert.ok(contain(style, '/styles/markdown-pdf.css'));
+    assert.ok(contain(style, '/styles/tomorrow.css'));
+    assert.ok(contain(style, '/styles/numbering.css'));
+  })
 })

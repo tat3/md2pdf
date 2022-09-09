@@ -182,6 +182,11 @@
           "default": true,
           "description": "Enable the inclusion of default Markdown styles (VSCode, markdown-pdf-2)"
         },
+        "markdown-pdf-2.styleNumberHeading": {
+          "type": "boolean",
+          "default": false,
+          "description": "print incremental section numbers (1., 1.1., ...) for headings (##, ###, ...)."
+        },
         "markdown-pdf-2.highlight": {
           "type": "boolean",
           "default": true,

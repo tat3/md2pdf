@@ -194,6 +194,7 @@ If the download is not successful or you want to avoid downloading every time yo
 |[Styles options](#styles-options)|[markdown-pdf-2.styles](#markdown-pdf-2styles)| |
 ||[markdown-pdf-2.stylesRelativePathFile](#markdown-pdf-2stylesrelativepathfile)| |
 ||[markdown-pdf-2.includeDefaultStyles](#markdown-pdf-2includedefaultstyles)| |
+||[markdown-pdf-2.styleNumberHeading](#markdown-pdf-2styleNumberHeading)| |
 |[Syntax highlight options](#syntax-highlight-options)|[markdown-pdf-2.highlight](#markdown-pdf-2highlight)| |
 ||[markdown-pdf-2.highlightStyle](#markdown-pdf-2highlightstyle)| |
 |[Markdown options](#markdown-options)|[markdown-pdf-2.breaks](#markdown-pdf-2breaks)| |
@@ -344,6 +345,10 @@ If the download is not successful or you want to avoid downloading every time yo
 #### `markdown-pdf-2.includeDefaultStyles`
   - Enable the inclusion of default Markdown styles (VSCode, markdown-pdf-2)
   - boolean. Default: true
+
+#### `markdown-pdf-2.styleNumberHeading`
+  - Enable print incremental section numbers (1., 1.1., ...) for headings (##, ###, ...).
+  - boolean. Default: false
 
 ### Syntax highlight options
 
