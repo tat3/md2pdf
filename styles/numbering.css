@@ -1,0 +1,37 @@
+/* declare section counters */
+body {
+  counter-reset: h2counter;
+}
+
+body h2 {
+  counter-reset: h3counter;
+}
+
+body h3 {
+  counter-reset: h4counter;
+}
+
+body h4 {
+  counter-reset: h5counter;
+}
+
+/* print section numbers */
+body h2::before {
+  counter-increment: h2counter;
+  content: counter(h2counter) ". ";
+}
+
+body h3::before {
+  counter-increment: h3counter;
+  content: counter(h2counter) "." counter(h3counter) ". ";
+}
+
+body h4::before {
+  counter-increment: h4counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+}
+
+body h5::before {
+  counter-increment: h5counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ". ";
+}

@@ -340,6 +340,10 @@ Markdown PDF をインストールして、Visual Studio Code で Markdownファ
   - デフォルトのスタイルシート(VSCode, markdown-pdf)を有効にします
   - boolean. Default: true
 
+#### `markdown-pdf-2.styleNumberHeading`
+  - 見出し(##, ###, ...)に対してインクリメンタルな章番号(1., 1.1., ...)を付与します。
+  - boolean. Default: false
+
 ### Syntax highlight options
 
 #### `markdown-pdf.highlight`

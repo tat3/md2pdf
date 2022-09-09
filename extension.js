@@ -669,13 +669,13 @@ function readStyles(uri) {
 
     includeDefaultStyles = vscode.workspace.getConfiguration(extension)['includeDefaultStyles'];
 
-    // 1. read the style of the vscode.
+    // read the style of the vscode.
     if (includeDefaultStyles) {
       filename = path.join(__dirname, 'styles', 'markdown.css');
       style += makeCss(filename);
     }
 
-    // 2. read the style of the markdown.styles setting.
+    // read the style of the markdown.styles setting.
     if (includeDefaultStyles) {
       styles = vscode.workspace.getConfiguration('markdown')['styles'];
       if (styles && Array.isArray(styles) && styles.length > 0) {
@@ -686,7 +686,7 @@ function readStyles(uri) {
       }
     }
 
-    // 3. read the style of the highlight.js.
+    // read the style of the highlight.js.
     var highlightStyle = vscode.workspace.getConfiguration(extension)['highlightStyle'] || '';
     var ishighlight = vscode.workspace.getConfiguration(extension)['highlight'];
     if (ishighlight) {
@@ -700,13 +700,20 @@ function readStyles(uri) {
       }
     }
 
-    // 4. read the style of the $extension.
+    // read the style of the $extension.
     if (includeDefaultStyles) {
       filename = path.join(__dirname, 'styles', 'markdown-pdf.css');
       style += makeCss(filename);
     }
 
-    // 5. read the style of the $extension.styles settings.
+    // read the style of number heading.
+    const styleNumberHeading = vscode.workspace.getConfiguration(extension)['styleNumberHeading'] || false;
+    if (styleNumberHeading) {
+      filename = path.join(__dirname, 'styles', 'numbering.css');
+      style += makeCss(filename);
+    }
+
+    // read the style of the $extension.styles settings.
     styles = vscode.workspace.getConfiguration(extension)['styles'] || '';
     if (styles && Array.isArray(styles) && styles.length > 0) {
       for (i = 0; i < styles.length; i++) {
